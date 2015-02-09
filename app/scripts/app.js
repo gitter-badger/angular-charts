@@ -1,5 +1,5 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'controllers/about']/*deps*/, function (angular, MainCtrl, AboutCtrl)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/about', 'controllers/header']/*deps*/, function (angular, MainCtrl, AboutCtrl, HeaderCtrl)/*invoke*/ {
   'use strict';
 
   /**
@@ -11,8 +11,10 @@ define(['angular', 'controllers/main', 'controllers/about']/*deps*/, function (a
    * Main module of the application.
    */
   return angular
-    .module('chartsApp', ['chartsApp.controllers.MainCtrl',
-'chartsApp.controllers.AboutCtrl',
+    .module('chartsApp', [
+    'chartsApp.controllers.MainCtrl',
+    'chartsApp.controllers.AboutCtrl',
+    'chartsApp.controllers.HeaderCtrl',
 /*angJSDeps*/
     'ngCookies',
     'ngResource',

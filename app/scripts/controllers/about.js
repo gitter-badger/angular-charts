@@ -9,11 +9,6 @@ define(['angular'], function (angular) {
    * Controller of the chartsApp
    */
   angular.module('chartsApp.controllers.AboutCtrl', [])
-    .controller('AboutCtrl', function ($scope) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
+    .controller('AboutCtrl', function () {
     });
 });
