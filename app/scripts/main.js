@@ -8,7 +8,9 @@ require.config({
     'angular-resource': '../bower_components/angular-resource/angular-resource',
     'angular-animate': '../bower_components/angular-animate/angular-animate',
     'angular-touch': '../bower_components/angular-touch/angular-touch',
-    'angular-mocks': '../bower_components/angular-touch/angular-mocks'
+    'angular-mocks': '../bower_components/angular-touch/angular-mocks',
+    'highcharts-ng': '../bower_components/highcharts-ng/dist/highcharts-ng',
+    'highcharts': '../bower_components/highcharts-release/highcharts-all'
   },
   shim: {
     'angular' : {'exports' : 'angular'},
@@ -21,7 +23,8 @@ require.config({
     'angular-mocks': {
       deps:['angular'],
       'exports':'angular.mock'
-    }
+    },
+    'highcharts-ng': ['highcharts', 'angular']
   },
   priority: [
     'angular'
@@ -39,7 +42,9 @@ require([
   'angular-sanitize',
   'angular-resource',
   'angular-animate',
-  'angular-touch'
+  'angular-touch',
+  'highcharts-ng',
+  'highcharts'
 ], function(angular, app, ngRoutes, ngCookies, ngSanitize, ngResource, ngAnimate, ngTouch) {
   'use strict';
   /* jshint ignore:start */
