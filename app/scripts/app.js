@@ -1,5 +1,5 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'controllers/about', 'controllers/header', 'services/chart']/*deps*/, function (angular, MainCtrl, AboutCtrl, HeaderCtrl, ChartService)/*invoke*/ {
+define(['angular', 'controllers/main', 'controllers/about', 'controllers/header', 'services/chart', 'controllers/chart', 'services/config']/*deps*/, function (angular, MainCtrl, AboutCtrl, HeaderCtrl, ChartService, ChartCtrl, AppConstant, ConfigConstant)/*invoke*/ {
   'use strict';
 
   /**
@@ -16,6 +16,8 @@ define(['angular', 'controllers/main', 'controllers/about', 'controllers/header'
     'chartsApp.controllers.AboutCtrl',
     'chartsApp.controllers.HeaderCtrl',
 'chartsApp.services.Chart',
+'chartsApp.controllers.ChartCtrl',
+'chartsApp.services.Config',
 /*angJSDeps*/
     'ngCookies',
     'ngResource',
@@ -35,8 +37,21 @@ define(['angular', 'controllers/main', 'controllers/about', 'controllers/header'
           templateUrl: 'views/about.html',
           controller: 'AboutCtrl'
         })
+        .when('/chart/:slug', {
+          templateUrl: 'views/chart.html',
+          controller: 'ChartCtrl'
+        })
         .otherwise({
           redirectTo: '/'
         });
+    })
+    .run(function ($rootScope) {
+      $rootScope.UTIL = {
+        toUpperCase: function (string) {
+          return string.replace( /-([a-z])/ig, function (all, letter) {
+            return letter.toUpperCase();
+          });
+        }
+      };
     });
 });

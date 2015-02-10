@@ -1,14 +1,5 @@
 <div class="row">
-  <div class="col-md-6">
-    <highchart id="monthly-average-temperature-chart" config="monthlyAverageTemperatureChartConfig"></highchart>
-  </div>
-  <div class="col-md-6">
-    <highchart id="us-and-ussr-nuclear-stockpiles-chart" config="USAndUSSRNuclearStockpilesChartConfig"></highchart>
-  </div>
-  <div class="col-md-6">
-    <highchart id="historic-world-population-by-region-chart" config="historicWorldPopulationByRegionChartConfig"></highchart>
-  </div>
-  <div class="col-md-6">
-    <highchart id=" browser-market-shares-at-a-specific-website-2014-chart" config="browserMarketSharesAtASpecificWebsite2014ChartConfig"></highchart>
+  <div class="col-md-6" ng-repeat="chart in charts">
+    <highchart id="{{ chart.slug }}-chart" config="chart.config"></highchart>
   </div>
 </div>
