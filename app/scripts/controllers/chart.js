@@ -12,6 +12,14 @@ define(['angular'], function (angular) {
     .controller('ChartCtrl', function ($routeParams, $scope, Chart, config) {
       var slug = $routeParams.slug;
 
+      $scope.submit = function() {
+        var data = {
+          title: $scope.chartConfig.title.text
+        };
+
+        Chart.save(slug, data);
+      };
+
       function activate () {
         Chart.get(slug)
           .success(function(data) {
@@ -26,7 +34,7 @@ define(['angular'], function (angular) {
 
         chartConfig = chartConfig.big || chartConfig;
 
-        chartConfig.series = angular.copy(data);
+        chartConfig.series = data;
 
         $scope.chartConfig = chartConfig;
       }

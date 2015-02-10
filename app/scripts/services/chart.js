@@ -13,6 +13,9 @@ define(['angular'], function (angular) {
     return {
       get: function(slug) {
         return $http.get('data/' + slug + '.json');
+      },
+      save: function(slug, data) {
+        return $http.put('chart/' + slug, data);
       }
     };
   });
