@@ -6,3 +6,10 @@
 * You should be able to expand the charts to display a larger version (either lightbox-like thing or on a new page)
 * The data for the charts should be loaded from something like a JSON resource. Persistence isn't expected for the data.
 * You should be able to alter something simple about the charts, such as the chart type or the chart name
+
+## Usage
+```
+npm install  
+bower install  
+grunt serve
+```
